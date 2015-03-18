@@ -3,7 +3,12 @@
 
 struct coche *curso_coche_alloc(void)
 {
-	return (struct coche *)malloc(sizeof(struct coche));
+	struct coche *c = (struct coche *)malloc(sizeof(struct coche));
+
+	memset(c, 0, (sizeof(struct coche)));
+
+	return c;
+
 }
 
 void curso_coche_free(struct coche *c)
@@ -61,7 +66,7 @@ void curso_coche_set_data(struct coche *c, uint16_t attr, const void *data,
 		c->marca = strdup(data);
 		break;
 	case CURSO_COCHE_ATTR_MATRICULA:
-		if (c->matricula)
+		if (curso_coche_attr_is_set(c,CURSO_COCHE_ATTR_MATRICULA))
 			xfree(c->matricula);
 
 		c->matricula = strdup(data);

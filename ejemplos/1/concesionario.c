@@ -17,6 +17,7 @@ struct concesionario *curso_concesionario_alloc(void)
 	if (con ==  NULL)
 		return NULL;
 
+	memset(con, 0, (sizeof(struct concesionario)));
 	INIT_LIST_HEAD(&con->garaje);
 
 	return con;
@@ -153,7 +154,7 @@ int curso_concesionario_snprintf(char *buf, size_t size,
 {
 	int ret = 0;
 	struct coche *c;
-
+	
 	ret += snprintf(buf, size,
 			"el concesionario propiedad de %s, tiene %d y son:\n",
 			con->dueno, con->num_coches);

@@ -5,11 +5,10 @@ int main(void)
 	struct coche *c1, *c2;
 	struct concesionario *con;
 	char info[4000];
-
 	c1 = curso_coche_alloc();
 
-	curso_coche_attr_set_str(c1, CURSO_COCHE_ATTR_MATRICULA, "DF 67838 SE");
-	curso_coche_attr_set_str(c1, CURSO_COCHE_ATTR_MARCA, "mini");
+	curso_coche_attr_set_str(c1, CURSO_COCHE_ATTR_MATRICULA, "SE1234D");
+	curso_coche_attr_set_str(c1, CURSO_COCHE_ATTR_MARCA, "Bolido");
 	curso_coche_attr_set_u32(c1, CURSO_COCHE_ATTR_ID, 0);
 
 	c2 = curso_coche_alloc();

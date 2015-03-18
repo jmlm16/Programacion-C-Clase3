@@ -725,4 +725,3 @@ static inline void hlist_add_after(struct hlist_node *n,
 	     pos = pos->next, ({ smp_read_barrier_depends(); 0; }) )
 
 #endif
-
