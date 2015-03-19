@@ -1,4 +1,4 @@
-#include "tarea.h"
+#include "../lib/tarea.h"
 #include <string.h>
 
 

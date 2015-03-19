@@ -1,4 +1,4 @@
-#include "gestor_tarea.h"
+#include "../lib/gestor_tarea.h"
 #include <string.h>
 
 struct gestor_tarea {
