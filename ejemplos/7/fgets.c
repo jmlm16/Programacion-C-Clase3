@@ -10,6 +10,7 @@ void genera_mensaje(FILE *file)
 int main (void)
 {
 	FILE *file = fopen("datos.dat", "a+");
+	//comprobar apertura del archivo
 	char *code;
 	size_t n = 0;
 	int c;
@@ -20,10 +21,16 @@ int main (void)
 	genera_mensaje(file);
 
 	code = malloc(101);
-	while(fgets(code, 100, file)) {
+	if(code == NULL)
+		return -1;
+	//comprobar malloc no devuelve null
+	while(fgets(code, 101, file)) {
 		printf("%s\n", code);
 	}
 
 	free(code);
+	if(fclose(file))
+		return -1;
+	//comprobar liberacion de fclose
 	return 0;
 }
